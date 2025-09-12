@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VapeShop</title>
+</head>
+<body>
+
+    <header>
+        <div>
+            <img src="assets/imgs/logo.webp" style="width: 50px; height: auto;"> <!-- Без стилей слишком не красиво, картинка слишком большая, просто поменял размер картинки-->
+            <a href="">Главная</a>
+            <a href="">Товары и услуги</a>
+            <a href="">Фотографии</a>
+            <a href="">О нас</a>
+            <a href="">Новости и Статьи</a>
+            <a href="">ЧаВо</a>
+            <a href="">Контакты</a>
+        </div>
+        <h1>Start VAPE SHOP & BAR - вейп шоп и бар в Ростове-на-Дону</h1>
+        <button>Позвонить</button>
+    </header>
+
+    <main>
+
+        <div>
+
+                <h2>Товары и услуги</h2>
+            
+            <div>
+
+                <h4>VOOPOO DRAG 157W</h4>
+                <img src="assets/imgs/drag157w.jpg">
+                <b>4 000₽</b>
+                <p>Модель имеет скромный дизайн, но продвинутую начинку</p>
+
+            </div>
+
+            <div>
+
+                <h4>Suorin Vagon</h4>
+                <img src="assets/imgs/suorin.jpg">
+                <b>2 000₽</b>
+                <p>Устройство состоящее из самого маленького мода</p>
+
+            </div>        
+
+            <div>
+
+                <h4>Ijust 3</h4>
+                <img src="assets/imgs/ijust3.jpg">
+                <b>3 000₽</b>
+                <p>Основные характеристики: Аккумулятор: встроенный</p>
+
+            </div>      
+
+            <div>
+                <a href="#">
+                    <img src="assets/imgs/back_arrow.png">
+                </a>
+            
+                <a href="#">
+                    <img src="assets/imgs/forward_arrow.png">
+                </a>
+            </div>
+
+        </div>
+
+        <div>
+
+            <h2>Видео обзоры</h2>
+
+            <div> 
+                <!-- Видео с рутуба не работают, с ютуба не скачиваются т.к. пометка 18+ не разрешает скачивание, поэтому будет 1-2 видео, я устал с этим возиться-->
+                <!-- Я думал я дурак не правильно делаю, а это видео с рутуба не запускаются почему-то, как я понял по stackoverflow кодек видео не подходит -->
+
+                <h3>Обзор Centaurus b60</h3>
+                <video width="320" height="240" controls poster="assets/imgs/centaurus.webp">
+                    <source src="assets/videos/centaurusB60.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео тег.
+                </video>
+                <p>Подробный обзор возможностей Centaurus B60</p>
+
+            </div>
+
+            <div> 
+
+                <h3>Обзор Aegis Hero 2</h3>
+                <video width="320" height="240" controls poster="assets/imgs/hero2(3version).webp">
+                    <source src="assets/videos/hero2(3version).mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео тег.
+                </video>
+                <p>Подробный обзор возможностей Aegis Hero 2</p>
+
+            </div>
+
+        </div>
+
+        <div>
+            <h2>Музыка в нашем вейп шопе</h2>
+
+            <p>Используемая музыка:</p>
+
+            <div>
+
+                <p>Emoslut666 - миниюбка</p>
+                <audio controls src="assets/audios/emoslut666miniyubka.mp3"></audio>
+                <p>KAMZ0NER - у тебя большая с</p>
+                <audio controls src="assets/audios/KAMZ0NER - у тебя большая с.mp3"></audio>
+
+            </div>
+
+            <p>Предложить свою музыку:</p>
+
+            <div>
+
+                <form action="#" method="post">
+                    <div>
+                        <label for="song-name">Название трека</label>
+                        <input type="text" id="song-name" name="song-name" required>
+                    </div>
+                    <div>
+                        <label for="artist">Исполнитель:</label>
+                        <input type="text" id="artist" name="artist" required>
+                    </div>
+                    <div>
+                        <input type="submit" value="Предложить музыку">
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+    
+    <footer>
+
+        <div>
+            <div>
+                <img src="assets/imgs/logo.webp" style="width: 80px; height: auto;">
+                <h3>START VAPE SHOP & BAR</h3>
+                <p>Лучший вейп-шоп в Ростове-на-Дону</p>
+            </div>
+            
+            <div>
+                <h4>Контактная информация</h4>
+                <p>Адрес: г. Ростов-на-Дону, ул. Большая Садовая д. 77</p>
+                <p>Телефон: +7 (123) 456-78-90</p>
+                <p>Email: info@startvapeshop.ru</p>
+            </div>
+            
+            <div>
+                <h4>Часы работы</h4>
+                <p>Пн-Пт: 10:00 - 22:00</p>
+                <p>Сб-Вс: 11:00 - 23:00</p>
+            </div>
+            
+            <div>
+                <h4>Мы в соцсетях</h4>
+                <a href="#">VK</a>
+                <a href="#">Telegram</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        
+        <div>
+            <p>&copy; 2023 START VAPE SHOP & BAR. Все права защищены.</p>
+            <p>Возрастное ограничение: 18+</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
