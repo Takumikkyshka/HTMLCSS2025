@@ -93,7 +93,6 @@
     display: flex;
     justify-content: center;
     padding: 20px 0;
-    background-color: #f8f9fa;
 }
 
 .search-box {
@@ -270,7 +269,6 @@
 
 .music-section {
     padding: 40px 30px;
-    background: #f8f9fa;
 }
 
 .music-section h2 {
@@ -381,7 +379,6 @@
 
 
 .footer {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
     padding: 40px 30px;
     border-top: 2px solid rgba(30, 144, 255, 0.3);
 }
