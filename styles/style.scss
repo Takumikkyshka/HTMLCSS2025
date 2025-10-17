@@ -1,0 +1,223 @@
+@import 'reset';
+@import 'header';
+@import 'footer';
+
+$primary-color: #1E90FF;
+$primary-color-hover: #1873CC;
+$secondary-color: #00BFFF;
+$padding-small: 15px;
+$padding-medium: 30px;
+$gap: 25px;
+$border-radius: 15px;
+$transition: all 0.3s ease;
+$shadow: 0 5px 20px rgba(0,0,0,0.1);
+$shadow-hover: 0 10px 30px rgba(30, 144, 255, 0.2);
+
+@mixin flex-container($justify: flex-start, $align: stretch, $direction: row, $wrap: nowrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+@mixin card-base($width: 320px, $height: auto) {
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+    padding: 20px;
+    width: $width;
+    height: $height;
+    transition: $transition;
+    border: 1px solid rgba($primary-color, 0.1);
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-hover;
+        border-color: rgba($primary-color, 0.3);
+    }
+}
+
+@mixin media-element($height: 200px, $margin-bottom: 15px) {
+    border-radius: 10px;
+    margin-bottom: $margin-bottom;
+    width: 100%;
+    height: $height;
+    object-fit: cover;
+}
+
+@mixin button-style($gradient: true) {
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition;
+    
+    @if $gradient {
+        background: linear-gradient(135deg, $primary-color, $secondary-color);
+        
+        &:hover {
+            background: linear-gradient(135deg, $primary-color-hover, darken($secondary-color, 10%));
+            transform: scale(1.05);
+        }
+    } @else {
+        background-color: $primary-color;
+        
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+    }
+}
+
+@mixin section-title {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: $padding-medium;
+    font-size: 32px;
+}
+
+.products {
+    margin-top: $padding-medium;
+
+    > h2 {
+        @include section-title;
+    }
+
+    > div {
+        @include flex-container(center, stretch, row, wrap);
+        gap: $padding-medium;
+        padding: $padding-medium;
+    }
+
+    article {
+        @include card-base(320px, 600px);
+        @include flex-container(stretch, center, column);
+        
+        video {
+            @include media-element(200px, 15px);
+        }
+
+        h4 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            min-height: 50px;
+            text-align: center;
+        }
+
+        p {
+            margin: 20px;
+            flex-grow: 1;
+        }
+
+        b {
+            color: $primary-color;
+            font-size: 20px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        button {
+            @include button-style;
+            width: 100%;
+        }
+    }
+
+    .costbutton {
+        @include flex-container(stretch, center, column);
+        margin-top: auto;
+    }
+}
+
+.music-section {
+    padding: 40px $padding-medium;
+
+    h2 {
+        @include section-title;
+    }
+
+    .music-promo {
+        background: linear-gradient(135deg, $primary-color, $secondary-color);
+        color: white;
+        padding: 25px;
+        border-radius: $border-radius;
+        text-align: center;
+        margin-bottom: $padding-medium;
+        box-shadow: 0 5px 60px rgba($primary-color, 0.3);
+
+        b {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        button {
+            @include button-style(false);
+        }
+    }
+
+    .music-tracks {
+        @include flex-container(center, stretch, row, wrap);
+        gap: $padding-medium;
+    }
+
+    article {
+        @include card-base(280px, 350px);
+        @include flex-container(stretch, center, column);
+        text-align: center;
+
+        img {
+            @include media-element(180px, 15px);
+        }
+
+        h4 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            min-height: 40px;
+            @include flex-container(center, center);
+        }
+
+        audio {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 25px;
+            background-color: #f0f8ff;
+        }
+
+        a {
+            color: $primary-color;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin-top: auto;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: rgba($primary-color, 0.1);
+            }
+        }
+    }
+}
+
+%text-center {
+    text-align: center;
+}
+
+.textcenter {
+    @extend %text-center;
+}
+
+.products > h2,
+.music-section h2 {
+    @extend %text-center;
+}

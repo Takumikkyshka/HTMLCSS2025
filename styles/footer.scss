@@ -1,0 +1,183 @@
+// Файл: footer.scss
+// Переменные для футера
+$footer-primary-color: #1E90FF;
+$footer-primary-hover: #1873CC;
+$footer-secondary-color: #00BFFF;
+$footer-padding: 40px 30px;
+$footer-card-padding: 30px;
+$footer-gap: 30px;
+$footer-border-radius: 15px;
+$footer-transition: all 0.3s ease;
+$footer-shadow: 0 5px 20px rgba(0,0,0,0.1);
+$footer-border-color: rgba(30, 144, 255, 0.1);
+$footer-input-border: rgba(30, 144, 255, 0.2);
+
+// Миксины для футера
+@mixin footer-flex($justify: flex-start, $align: stretch, $direction: row, $wrap: nowrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+@mixin footer-card {
+    background: white;
+    border-radius: $footer-border-radius;
+    box-shadow: $footer-shadow;
+    padding: 20px;
+    border: 1px solid $footer-border-color;
+}
+
+@mixin footer-button {
+    background: linear-gradient(135deg, $footer-primary-color, $footer-secondary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $footer-transition;
+    width: 100%;
+
+    &:hover {
+        background: linear-gradient(135deg, $footer-primary-hover, #0099CC);
+        transform: scale(1.05);
+    }
+}
+
+@mixin footer-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid $footer-input-border;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: $footer-transition;
+
+    &:focus {
+        outline: none;
+        border-color: $footer-primary-color;
+        box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.1);
+    }
+}
+
+// Стили футера
+.footer {
+    padding: $footer-padding;
+    border-top: 2px solid rgba(30, 144, 255, 0.3);
+
+    &-feedback {
+        @include footer-card;
+        padding: $footer-card-padding;
+        margin-bottom: 40px;
+    }
+
+    &-title {
+        color: $footer-primary-color;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    &-main-title {
+        color: $footer-primary-color;
+        font-size: 28px;
+        margin-bottom: $footer-gap;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-input {
+            @include footer-input;
+        }
+    }
+
+    .submit-btn {
+        @include footer-button;
+    }
+
+    &-content {
+        @include footer-flex(space-between, stretch, row, wrap);
+        gap: $footer-gap;
+    }
+
+    &-card {
+        @include footer-card;
+        flex: 1;
+        min-width: 250px;
+
+        .footer-logo {
+            border-radius: 10px;
+            margin-bottom: 10px;
+            width: 50px;
+            height: auto;
+        }
+
+        .footer-brand {
+            color: #333;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .footer-subtitle {
+            color: $footer-primary-color;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .footer-description {
+            color: #666;
+        }
+    }
+
+    &-table {
+        width: 100%;
+        margin-top: 10px;
+
+        .table-header,
+        .table-data {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(30, 144, 255, 0.1);
+        }
+
+        .table-header {
+            color: $footer-primary-color;
+            font-weight: 600;
+        }
+    }
+
+    .social-links {
+        @include footer-flex(flex-start, stretch, column);
+
+        .social-link {
+            color: $footer-primary-color;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: $footer-transition;
+            border-radius: 5px;
+
+            &:hover {
+                color: $footer-primary-hover;
+                background-color: rgba(30, 144, 255, 0.1);
+                transform: translateX(5px);
+            }
+        }
+    }
+}
