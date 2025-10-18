@@ -1,6 +1,4 @@
-@import 'reset';
-@import 'header';
-@import 'footer';
+@import 'reset',  'header', 'footer';
 
 $primary-color: #1E90FF;
 $primary-color-hover: #1873CC;
@@ -209,6 +207,8 @@ $shadow-hover: 0 10px 30px rgba(30, 144, 255, 0.2);
     }
 }
 
+
+// хрень какая то не понял нафиг оно надо
 %text-center {
     text-align: center;
 }
